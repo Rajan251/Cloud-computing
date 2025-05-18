@@ -1,5 +1,51 @@
 # AWS Services Quick Reference Guide
 
+## AWS Global Infrastructure
+
+### Regions
+- Physical locations around the world where AWS clusters data centers
+- Each region is completely independent and isolated from other regions
+- Examples: us-east-1 (N. Virginia), eu-west-1 (Ireland), ap-southeast-2 (Sydney)
+- Choose regions based on: compliance requirements, latency, service availability, and pricing
+
+### Availability Zones (AZs)
+- Multiple isolated data centers within a region
+- Connected with high-bandwidth, low-latency networking
+- Each AZ is physically separate with independent power, cooling, and networking
+- Typically each region has 3+ AZs (e.g., us-east-1a, us-east-1b, us-east-1c)
+- Used for high availability and fault tolerance
+
+### Edge Locations
+- Sites deployed in major cities and highly populated areas
+- Much more numerous than regions (200+ globally)
+- Part of AWS's Content Delivery Network (CloudFront)
+- Used to cache content closer to users for faster delivery
+- Also used by Route 53 (DNS service) for faster resolution
+
+### Local Zones
+- Extensions of AWS regions closer to large population and industry centers
+- Lower latency by placing compute, storage, and database closer to end-users
+- Good for latency-sensitive applications
+
+### Outposts
+- AWS services and infrastructure deployed on-premises
+- Same hardware as in AWS cloud
+- Managed by AWS in your own data center
+
+## Regional vs. Global Services
+
+**Global Services** (available worldwide, not tied to a specific region):
+- IAM (Identity and Access Management)
+- Route 53 (DNS service)
+- CloudFront (Content Delivery Network)
+- WAF (Web Application Firewall)
+- Certificate Manager (for certain regions)
+- S3 (buckets are regional, but service namespace is global)
+
+**Regional Services** (must be selected and deployed in specific AWS regions):
+- Most AWS services including EC2, Lambda, RDS, DynamoDB, VPC, and many others
+
+
 ## Compute Services
 - **EC2 (Elastic Compute Cloud)**
   - Virtual servers in the cloud
